@@ -19,13 +19,14 @@ import OrderList from './views/OrderList.vue'
 import Security from './views/Security.vue'
 
 Vue.use(Router)
-//整个项目的路由词典： 访问路径 <=> 视图组件
+//整个项目的路由词典：访问路径 <=> 视图组件
 export default new Router({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
     {
-      path: '/main', component: Main,
+      path: '/main',
+      component: Main,
       children: [
         { path: '', redirect: '/table/list' },
         { path: '/settings', component: GlobalSettings },
@@ -40,7 +41,7 @@ export default new Router({
         { path: '/dish/add', component: DishAdd },
         { path: '/dish/delete', component: DishDelete },
         { path: '/dish/update', component: DishUpdate },
-        { path: '/dish/update', component: OrderList },
+        { path: '/order/list', component: OrderList },
         { path: '/security', component: Security },
       ]
     },
